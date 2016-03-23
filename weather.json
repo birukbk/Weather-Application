@@ -1,0 +1,60 @@
+{
+	"weather": 
+	[
+	     {
+		"city": {
+			"cityId": 1,
+			"cityName": "Leeds"
+		},
+		"currentConditions": "Sun",
+		"temperature": 32,
+		"wind": {
+			"windSpeed": 11,
+			"windDirection": "South westerly",
+			"windChillFactor": -5
+		}
+
+	},
+	{
+		"city": {
+			"cityId": 2,
+			"cityName": "Liverpool"
+		},
+		"currentConditions": "Sun",
+		"temperature": 30,
+		"wind": {
+			"windSpeed": 12,
+			"windDirection": "Southerly",
+			"windChillFactor": -2
+		}
+
+	}, 
+	{
+		"city": {
+			"cityId": 3,
+			"cityName": "Carisle"
+		},
+		"currentConditions": "Clouds",
+		"temperature": 28,
+		"wind": {
+			"windSpeed": 12,
+			"windDirection": "Southerly",
+			"windChillFactor": -2
+		}
+
+	}, 
+	{
+		"city": {
+			"cityId": 4,
+			"cityName": "Lincoln"
+		},
+		"currentConditions": "Thunderstorm",
+		"temperature": 24,
+		"wind": {
+			"windSpeed": 30,
+			"windDirection": "South easterly",
+			"windChillFactor": -4
+		}
+	}
+	]
+}
