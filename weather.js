@@ -18,15 +18,8 @@
 				output+= '<td>'+ response.weather[index].wind.windDirection+ '</td>';
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
-			//$('#updateData').append(response);
 			$('#updateData').append(output).find('#updateData').html();
-			
 			updateWeatherData();
-
-			//$('#citylist').append(output);
-			//document.getElementById('citylist').innerHTML = output;
-			
-			
 		},	
 		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
