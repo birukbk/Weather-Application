@@ -1,10 +1,12 @@
- $(document).ready(function() {
+ (function updateWeatherData(){
+ 	setTimeout(function(){
+ 		$(document).ready(function() {
     $.ajax( {
         url:'weather.json',
 		type: 'GET',
         dataType: 'json', // Returns JSON
 		success: function(response){
-			var output = '';
+			var output = '<thead><tr><th>City</th><th>Conditions</th><th>Temprature</th><th>Wind Spee</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
 			var unitForTemp='°C';
 			var unitForSpeed='mph';
 			$.each(response.weather,function(index) {
@@ -16,9 +18,16 @@
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
 			$('#citylist').append(output);
+			document.getElementById('citylist').innerHTML = output;
+			
+			updateWeatherData();
 		},	
-		error: function() {
+		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
        }
     });      
-});
+        });
+
+ 	}, 250);
+ })();
+ 
