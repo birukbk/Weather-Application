@@ -6,6 +6,7 @@
 		type: 'GET',
         dataType: 'json', // Returns JSON
 		success: function(response){
+
 			var output = '<thead><tr><th>City</th><th>Conditions</th><th>Temprature</th><th>Wind Spee</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
 			var unitForTemp='°C';
 			var unitForSpeed='mph';
@@ -18,14 +19,14 @@
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
 			//$('#updateData').append(response);
-			$('#updateData').append(output);
+			$('#updateData').append(output).find('#updateData').html();
 			
-			//$('#updateData').load(updateWeatherData());
+			updateWeatherData();
 
-
+			//$('#citylist').append(output);
 			//document.getElementById('citylist').innerHTML = output;
 			
-			//updateWeatherData();
+			
 		},	
 		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
