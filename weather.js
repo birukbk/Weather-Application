@@ -19,7 +19,7 @@
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
 			$('#updateData').append(output).find('#updateData').html();
-			updateWeatherData();
+			//updateWeatherData();
 		},	
 		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
