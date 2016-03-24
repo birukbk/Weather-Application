@@ -1,6 +1,4 @@
- (function updateWeatherData(){
- 	setTimeout(function(){
- 		$(document).ready(function() {
+ 	$(document).ready(function updateWeatherData() {
     $.ajax( {
         url:'weather.json',
 		type: 'GET',
@@ -17,17 +15,21 @@
 				output+= '<td>'+ response.weather[index].wind.windDirection+ '</td>';
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
-			$('#citylist').append(output);
+			//$('#citylist').append(output);
 			document.getElementById('citylist').innerHTML = output;
+			setTimeout(updateWeatherData, 5000);
+			document.getElementById('info').innerHTML = ''; //clear error message.
 			
-			updateWeatherData();
 		},	
 		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
+			//document.getElementById('info').innerHTML = '';
+
+			setTimeout(updateWeatherData, 5000); //wait for 5sec and load data.
        }
     });      
-        });
+       
 
- 	}, 250);
- })();
+ 	});
+
  
