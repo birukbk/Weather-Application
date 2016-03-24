@@ -17,10 +17,15 @@
 				output+= '<td>'+ response.weather[index].wind.windDirection+ '</td>';
 				output+= '<td>'+ response.weather[index].wind.windChillFactor+ '</td></tr>';
 			});
-			$('#citylist').append(output);
-			document.getElementById('citylist').innerHTML = output;
+			//$('#updateData').append(response);
+			$('#updateData').append(output);
 			
-			updateWeatherData();
+			//$('#updateData').load(updateWeatherData());
+
+
+			//document.getElementById('citylist').innerHTML = output;
+			
+			//updateWeatherData();
 		},	
 		error: function() { 
 			$('#info').html('<p>An error has occurred</p>');
