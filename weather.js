@@ -22,8 +22,8 @@
 			
 		},	
 		error: function() { 
-			$('#info').html('<p>An error has occurred</p>');
-			//document.getElementById('info').innerHTML = '';
+			$('#info').html('<p>An error has occurred</p>'); //show error message
+			document.getElementById('citylist').innerHTML = ''; //clears the table
 
 			setTimeout(updateWeatherData, 5000); //wait for 5sec and load data.
        }
