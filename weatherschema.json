@@ -1,66 +1,83 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"title": "Current weather application",
-	"type": "object",
-	"properties": 
-	{
-		"weather": 
-		{
-			"type": "array",
-			"items": 
-			{
-				"type": "object",
-				"properties": 
-				{
-					"city": 
-					{
-						"type": "object",
-						"properties": 
-						{
-							"cityId": {
-								"type": "number",
-								"minimum": 0
-							},
-							"cityName": {
-								"type": "string"
-							}
-						},
-						"required": ["cityId", "cityName"]
-					},
-					"currentConditions": 
-					{
-						"type": "string",
-						"enum": ["Sun", "Rain", "Light rain", "Snow", "Hail", "Clouds", "Light clouds", "Thunderstorm"]
-					},
-					"temperature": {
-						"type": "number"
-					},
-					"wind": 
-					{
-						"type": "object",
-						"properties": 
-						{
-							"windSpeed": 
-							{
-								"type": "number",
-								"minimum": 0
-							},
-							"windDirection": 
-							{
-								"type": "string",
-								"enum": ["Northely", "North easterly", "Easterly", "South easterly", "Southerly", "South westerly", "Westerly", "North westerly"]
-							},
-							"windChillFactor": 
-							{
-								"type": "number"
-							}
-						},
-						"required": ["windSpeed", "windDirection", "windChillFactor"]	
-					}
-				},
-				"required": ["city", "currentConditions", "temperature", "wind"]
-		  	}
-	    }
-	}
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Current weather application",
+   "type": "object",
+   "properties": {
+      "weather": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "city": {
+                  "type": "object",
+                  "properties": {
+                     "cityId": {
+                        "type": "number",
+                        "minimum": 0
+                     },
+                     "cityName": {
+                        "type": "string"
+                     }
+                  },
+                  "required": [
+                     "cityId",
+                     "cityName"
+                  ]
+               },
+               "currentConditions": {
+                  "type": "string",
+                  "enum": [
+                     "Sun",
+                     "Rain",
+                     "Light rain",
+                     "Snow",
+                     "Hail",
+                     "Clouds",
+                     "Light clouds",
+                     "Thunderstorm"
+                  ]
+               },
+               "temperature": {
+                  "type": "number"
+               },
+               "wind": {
+                  "type": "object",
+                  "properties": {
+                     "windSpeed": {
+                        "type": "number",
+                        "minimum": 0
+                     },
+                     "windDirection": {
+                        "type": "string",
+                        "enum": [
+                           "Northely",
+                           "North easterly",
+                           "Easterly",
+                           "South easterly",
+                           "Southerly",
+                           "South westerly",
+                           "Westerly",
+                           "North westerly"
+                        ]
+                     },
+                     "windChillFactor": {
+                        "type": "number"
+                     }
+                  },
+                  "required": [
+                     "windSpeed",
+                     "windDirection",
+                     "windChillFactor"
+                  ]
+               }
+            },
+            "required": [
+               "city",
+               "currentConditions",
+               "temperature",
+               "wind"
+            ]
+         }
+      }
+   }
 }
-
