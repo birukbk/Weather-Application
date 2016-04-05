@@ -4,7 +4,7 @@ $(document).ready(function updateWeatherData() {
         type: 'GET',
         dataType: 'json', // Returns JSON
         success: function(response) {
-            var output = '<thead><tr><th>City</th><th>Conditions</th><th>Temprature</th><th>Wind Spee</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
+            var output = '<thead><tr><th>City</th><th>Condition</th><th>Temperature</th><th>Wind Speed</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
             var unitForTemp = '°C';
             var unitForSpeed = 'mph';
             $.each(response.weather, function(index) {
@@ -15,7 +15,6 @@ $(document).ready(function updateWeatherData() {
                 output += '<td>' + response.weather[index].wind.windDirection + '</td>';
                 output += '<td>' + response.weather[index].wind.windChillFactor + '</td></tr>';
             });
-            //$('#citylist').append(output);
             document.getElementById('citylist').innerHTML = output;
             setTimeout(updateWeatherData, 5000);
             document.getElementById('info').innerHTML = ''; //clear error message.
