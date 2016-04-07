@@ -4,14 +4,13 @@ $(document).ready(function updateWeatherData() {
         type: 'GET',
         dataType: 'json', // Returns JSON
         success: function(response) {
-            var output = '<thead><tr><th>City</th><th>Condition</th><th>Temperature</th><th>Wind Speed</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
-            var unitForTemp = '°C';
-            var unitForSpeed = 'mph';
+            var output = '<thead><tr><th>City</th><th>Conditions</th><th>Temperature</th><th>Wind Speed</th><th>Wind Direction</th><th>Wind Chill Factor</th></thead>';
             $.each(response.weather, function(index) {
+
                 output += '<tr><td>' + response.weather[index].city.cityName + '</td>';
                 output += '<td>' + response.weather[index].currentConditions + '</td>';
-                output += '<td>' + response.weather[index].temperature + unitForTemp + '</td>';
-                output += '<td>' + response.weather[index].wind.windSpeed + unitForSpeed + '</td>';
+                output += '<td>' + response.weather[index].temperature + '&deg;c</td>';
+                output += '<td>' + response.weather[index].wind.windSpeed + 'mph</td>';
                 output += '<td>' + response.weather[index].wind.windDirection + '</td>';
                 output += '<td>' + response.weather[index].wind.windChillFactor + '</td></tr>';
             });
